@@ -2295,28 +2295,79 @@ header .navbar-notify > li > .dropdown-menu {margin-top: 1px;border-top-width: 0
                             console.log(instance);
                         },
 
-                        browserImageDialog : function (callback) {
-                            IMS.Plugins.PhotoManager.Init({
-                                // Accept: ".jpg,.png",
-                                callback: function (arrImage) {
-                                    if(typeof callback == "function"){
-                                        callback(arrImage);
-                                    }
-                                }
-                            })
+                        browserVideoDialog: function(options){
+                            IMS.Plugins.VideoManager.Init(options)
                         },
-                        browserVideoDialog: function(callback){
-                            IMS.Plugins.VideoManager.Init({
-                                callback: function(arrVideo){
-                                    if(typeof callback == "function"){
-                                        callback(arrVideo);
-                                    }
-                                }
-                            })
-                        }
-                        // call back trả về mảng arrImage hoặc video dạng như hình ạ
-                        <img src="./imagedialog.PNG" alt="">
+                        browserImageDialog : function (options) {
+                            IMS.Plugins.PhotoManager.Init(options)
+                        },
+                        editPhotoWatermark: function(options){
+                            IMSPhotoEditor.initWatermark(options)
+                        },
+                        editPhotoEffect: function(options){
+                            IMSPhotoEditor.init(options)
+                        },
+
+
+
+                        +++ call back của trả về mảng arrImage +++
+                        author: "Admin"
+                        createdBy: "admin"
+                        name: "pexels-photo-458766"
+                        note: ""
+                        originalHeight: 333
+                        originalSrc: "http://afamilycdn.com/2019/5/4/pexels-photo-458766-1556957634380307009222.jpeg"
+                        originalWidth: 500
+                        photoid: "a4e0d3e0-6e44-11e9-b9e2-330e088e8b31"
+                        tags: ""
+                        url: "http://afamilycdn.com/2019/5/4/pexels-photo-458766-1556957634380307009222.jpeg"
+                        zoneId: -1
+
+                        +++ call back của trả về mảng Video +++
+                        size: "640x360"
+                        embed: "<div class="VCSortableInPreviewMode" type="VideoStream" embed-type="4" data-width="600px" data-height="400px" data-vid="afamily/2019/4/26/o_lN37OAJ9U-15562758368131329128711_360p.mp4" data-info="1feed7b0681111e998bd99dc227e6b06" data-autoplay="false" data-removedlogo="false" data-location="" data-displaymode="0" data-thumb="https://video-thumbs.mediacdn.vn/afamily/2019/4/26/o_lN37OAJ9U-15562758368131329128711.jpg" data-contentId="" data-namespace="afamily" data-originalId=""><div class="VideoCMS_Caption"><p class="NLPlaceholderShow" data-placeholder="[nhập chú thích]" style="text-align: center;" contenteditable="true">Cưới Nhau Đi</p></div></div>"
+                        name: "Cưới Nhau Đi "
+                        location: ""
+                        autostart: false
+                        autostart: false
+                        note: "Cưới Nhau Đi "
+                        advMode: "5"
+                        advPos: ""
+                        author: "Quang"
+                        autostart: false
+                        avatar: "https://video-thumbs.mediacdn.vn/afamily/2019/4/26/o_lN37OAJ9U-15562758368131329128711.jpg"
+                        baseAvatarUrl: "https://video-thumbs.mediacdn.vn/"
+                        capacity: "20835728"
+                        disableAdvertise: false
+                        duration: "00:04:38.66"
+                        embed: "<div class="VCSortableInPreviewMode" type="VideoStream" embed-type="4" data-width="600px" data-height="400px" data-vid="afamily/2019/4/26/o_lN37OAJ9U-15562758368131329128711_360p.mp4" data-info="1feed7b0681111e998bd99dc227e6b06" data-autoplay="false" data-removedlogo="false" data-location="" data-displaymode="0" data-thumb="https://video-thumbs.mediacdn.vn/afamily/2019/4/26/o_lN37OAJ9U-15562758368131329128711.jpg" data-contentId="" data-namespace="afamily" data-originalId=""><div class="VideoCMS_Caption"><p class="NLPlaceholderShow" data-placeholder="[nhập chú thích]" style="text-align: center;" contenteditable="true">Cưới Nhau Đi (Yes I Do)-Bùi Anh Tuấn, Hiền Hồ&100 cặp cô dâu chú rể|Gala Nhạc Việt Bài Hát Của Tháng</p></div></div>"
+                        filename: "2019/4/26/o_lN37OAJ9U-15562758368131329128711_360p.mp4"
+                        height: 365
+                        hls: "https://hls.mediacdn.vn/afamily/2019/4/26/o_lN37OAJ9U-15562758368131329128711_360p.mp4/master.m3u8"
+                        c
+                        key: "1feed7b0681111e998bd99dc227e6b06"
+                        layout: "0"
+                        location: ""
+                        name: "Cưới Nhau Đi (Yes I Do)-Bùi Anh Tuấn, Hiền Hồ&100 cặp cô dâu chú rể|Gala Nhạc Việt Bài Hát Của Tháng"
+                        note: "Cưới Nhau Đi (Yes I Do) | Gala Nhạc Việt Bài Hát Của Tháng↵#CuoiNhauDi #YesIDo #GalaNhacViet↵↵Sáng tác: CHÂU ĐĂNG KHOA↵Hòa âm: HOÀNG ANH↵Phòng thu: HIẾU STUDIO↵Mix & Master: LÊ MINH HIẾU↵Đạo diễn: ĐINH HÀ UYÊN THƯ↵Quay phim: TIẾN TUẤN – DUY PHÚ↵Dựng phim: LÊ KHÔI↵Hậu kì & làm màu: TIẾN TUẤN↵Thiết bị ánh sáng: CINELIGHT↵Hỗ trợ địa điểm: CỎ HOUSE STUDIO↵Hình ảnh: THERON STUDIO ↵Tạo phong cách: PANDA↵Trang phục: JOLI POLI – K BY KHOA↵Trang điểm: ĐẶNG THÀNH VINH – QUÍ ĐOÀN↵Giám sát sản xuất: TIẾN TRẦN - THÙY VÂN↵Tổ chức sản xuất: LÊ KHÔI – HỒNG NHUNG – THANH NHÀN – NGỌC TIÊN – PHƯƠNG PANDA↵Sản xuất: T PRODUCTION↵ ↵Trong Music Video có sử dụng hình ảnh của 100 cặp Cô Dâu Chú Rể đến từ các thương hiệu Cưới. Xin chân thành cám ơn sự đồng hành của các thương hiệu:↵↵Đám Cưới Phong Cách - Cama Wedding - Kim Tuyến Bridal - L’amant Wedding Studio - Your Dreams Wedding & Event - Lemon Tree Style - NHP Media Productions - 1998 Productions - Nupakachi Wedding - Shady Bridal - Kiba Wedding - Rec 16 Studio - Canary Bridal - TuArt Wedding - Wind Media - Vui Production↵↵---------------------------------------------------------↵↵GALA NHẠC VIỆT – MUSIC CHANNEL↵↵Với mong muốn phát triển thành kênh âm nhạc Việt được khán giả yêu thích,Tháng 4/2019 - Gala Nhạc Việt thực hiện dự án mang tên “Gala Nhạc Việt – Music Channel” với 4 hoạt động chính được luân phiên ra mắt hằng tuần:↵↵- GALA NHẠC VIỆT - BÀI HÁT CỦA THÁNG: mỗi tháng Gala Nhạc Việt sẽ ra mắt 01 bài hát được sáng tác ĐỘC QUYỀN thể hiện qua những sự KẾT HỢP ĐẶC BIỆT↵- NEWSTAR CAFÉ ACOUSTIC: mỗi tuần giới thiệu một ngôi sao mới có giọng hát đặc biệt, cover các ca khúc hit được ngẫu hứng khoác lên mình bản phối acoustic độc đáo↵- STUDIO GALA NHAC VIỆT: Mang đến khoảnh khắc hậu trường vui nhộn, là cầu nối cho các sản phẩm của nghệ sĩ đến gần hơn với công chúng↵- GALA NHẠC VIỆT FAN PARTY: Một buổi giao lưu và gặp gỡ với các nghệ sĩ đang được yêu thích. Tạo điều kiện cho người hâm mộ hiểu rõ hơn nghệ sĩ thông qua các hoạt động vui nhộn.↵↵Một phiên bản mới – Một diện mạo mới↵↵Muốn thưởng thức âm nhạc Việt chất lượng thì hãy đến với GALA NHẠC VIỆT – MUSIC CHANNEL được ra mắt vào tháng 4/2019↵↵-------------------------------------------↵↵Subscribe Gala Nhạc Việt: http://yeah1.net/GalaNhacViet↵Facebook Gala Nhạc Việt: http://www.facebook.com/galanhacviet↵Gmail: galanhacviet@gmail.com↵Hotline: 0909 805 200 - (028) 66 846 706↵Địa chỉ: Văn phòng Gala Nhạc Việt ↵The Goldview - Block A1 - 06.01 ↵346 Bến Vân Đồn, Phường 1, Quận 4, Hồ Chí Minh↵↵©2019 Gala Nhạc Việt. All rights reserved↵↵#galanhacvietmusicchannel #baihatcuathang"
+                        originalId: ""
+                        c
+                        removeLogo: false
+                        size: "640x360"
+                        source: "https://www.youtube.com/watch?v=o_lN37OAJ9U"
+                        sourceIframe: "https://vcplayer.vcmedia.vn/1.1/?_site=afamily&amp;vid=afamily/2019/4/26/o_lN37OAJ9U-15562758368131329128711_360p.mp4&amp;autoplay=false&amp;_info=1feed7b0681111e998bd99dc227e6b06"
+                        tags: ""
+                        vid: "afamily/2019/4/26/o_lN37OAJ9U-15562758368131329128711_360p.mp4"
+                        width: 650
+                        zoneId: "-1"
+
+                        Trong các hàm init của photo, video, watermark, effect... có các tham số như thường lệ từ trước và 1 callback
+                        ==> init({options})
+                        trong callback thì trả về các dữ liệu
                         
+                        +++ call back của trả về mảng edit effect trả về photo src +++
+                        +++ call back của trả về mảng edit watermark trả về arr photo +++
+                        ==> effect và watermark trả về bthuong như trước ạ
                     })
             </pre>
                 </div>
