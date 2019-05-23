@@ -9,9 +9,16 @@
         #wrap{
             background-color: antiquewhite;
             padding: 5%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
         .highlight{background-color: yellow;}
         .green{background-color: turquoise;}
+        .boxtype1, .boxtype2 {
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
@@ -40,6 +47,8 @@
             </pre>
 
             <h3>Example init editorId</h3>
+
+            <h4>Nếu không cần item nào thì không khai báo , ex: không cần editPhotoEffect thì không khai báo</h4>
             <pre>
                     $("#test").vceditor({
                         namespace:"quick-news",
@@ -50,7 +59,7 @@
                             console.log(instance);
                         },
                         
-                        <span class="highlight">browserVideoDialog:</span> function(options, _callback){
+                        <div class="boxtype1"> <span class="highlight">browserVideoDialog:</span> function(options, _callback){
                             var _callFn = function(){
                                 IMSVideoManager.init({
                                     nameSpace: imsConfig.videoApiNameSpace,
@@ -71,9 +80,26 @@
                             } else {
                                 Helper.loadJs(imsConfig.widgetBasePath + "/video-manager.js", _callFn);
                             }
+
+                            <p class="green">
+                                    * options : {maxSelected: max item có thể lấy}
+                                    * callback: là function với tham số là 1 mảng video trả lại cho editor, 
+                                    *           mỗi item video có format = {
+                                    *                                    size: "640x360"
+                                    *                                    embed :
+                                    *                                    name: "Cưới Nhau Đi "
+                                    *                                    location: ""
+                                    *                                    autostart: false
+                                    *                                    autostart: false
+                                    *                                    note: "Cưới Nhau Đi "
+                                    *                                   }
+                                    */
+                                    </p>
         
                         },
-                        <span class="highlight">browserImageDialog :</span> function (options, _callback) {
+                    </div>
+                    <div class="boxtype2">   <span class="highlight">browserImageDialog :</span> function (options, _callback) {
+
                             var _callFn = function(){
                                 IMSPhotoManager.init({
                                     nameSpace: imsConfig.photoApiNameSpace,
@@ -94,10 +120,28 @@
                             } else {
                                 Helper.loadJs(imsConfig.widgetBasePath + "/photo-manager.js", _callFn);
                             }
-                        },
-                        <span class="highlight">editPhotoWatermark:</span> function(options, callback){
 
-                            <span class="green">// *** options = {photos:[Mảng các đường link ảnh cần đóng watermark], logos: các logos}</span>
+                            <p class="green">
+                                    * options : {maxSelected: max item có thể lấy}
+                                    * callback: là function với tham số là 1 mảng video trả lại cho editor, 
+                                    *           mỗi item video có format = {
+                                    *                                    author: "Admin"
+                                    *                                    createdBy: "admin"
+                                    *                                    name: "pexels-photo-458766"
+                                    *                                    note: ""
+                                    *                                    originalHeight: 
+                                    *                                    originalSrc: "http://afamilycdn.com/2019/5/4/pexels-photo-458766-1556957634380307009222.jpeg"
+                                    *                                    originalWidth: 500
+                                    *                                    photoid: "a4e0d3e0-6e44-11e9-b9e2-330e088e8b31"
+                                    *                                    tags: ""
+                                    *                                    url: "http://afamilycdn.com/2019/5/4/pexels-photo-458766-1556957634380307009222.jpeg"
+                                    *                                    zoneId: -1
+                                    *                                   }
+                                    */
+                                    </p>
+                        },
+                    </div>
+                        <div class="boxtype1"></p><span class="highlight">editPhotoWatermark:</span> function(options, callback){
 
                             var _callFn = function(){
                                 IMSPhotoEditor.initWatermark({
@@ -105,7 +149,7 @@
                                     userName: imsConfig.currentUser,
                                     getTokenFunction: imsConfig.getPhotoToken,
                                     photos: options.photos,
-                                    logos: options.logos,
+                                    logos: [ ** Mảng logos mong muốn có để đóng watermark **]
                                     callback: function (arrPhoto) {
                                         if(typeof callback == "function"){
                                             callback(arrPhoto);
@@ -118,11 +162,23 @@
                             } else {
                                 Helper.loadJs(imsConfig.widgetBasePath + "/photo-manager.js", _callFn);
                             }
+
+                            <p class="green">
+                                    // *** options = {photos:[Mảng các đường link ảnh cần đóng watermark]}
+                                    *** callback trả về là arrImage ={
+                                                        - originalSrc
+                                                        - src 
+                                                        - width
+                                                        - height 
+                                                        - canvas : null
+                                    }
+                                     
+                                </p>
         
                         },
-                        <span class="highlight">editPhotoEffect:</span> function(options, callback){
+                    </div>
+                    <div class="boxtype2">   <span class="highlight">editPhotoEffect:</span> function(options, callback){
 
-                            <span class="green">// *** options = {imgObj: ảnh cần chỉnh watermark, logos: logos của effect}</span>
                             var _callFn = function(){
                                 IMSPhotoEditor.init({
                                     nameSpace: VCEDITOR.Config.photoApiNameSpace,
@@ -130,7 +186,7 @@
                                     getTokenFunction: VCEDITOR.Config.getPhotoToken,
                                     sourceUrl: options.sourceUrl,
                                     imgObj: options.imgObj,
-                                    logos: options.logos,
+                                    logos: **Logo mong muốn hiển thị ở effect khi load**,
                                     callback: function (photo) {
                                         if(typeof callback == "function"){
                                             callback(photo);
@@ -143,20 +199,15 @@
                             } else {
                                 Helper.loadJs(imsConfig.widgetBasePath + "/photo-manager.js", _callFn);
                             }
+
+                            <p class="green">
+                                    // *** options = {imgObj: ảnh cần chỉnh watermark}
+                                       *** callback trả về là src ảnh
+                                </p>
         
                         },
-
-                        <p class="highlight">                            
-                            +++ call back của edit watermark trả về arr photo +++
-                            arrphoto gồm các field: - originalSrc
-                                                    - src 
-                                                    - width
-                                                    - height 
-                                                    - canvas : null
-                            +++ call back của edit effect trả về photo src +++</p>
-
-
                     })
+                </div>
             </pre>
                 </div>
             </div>
