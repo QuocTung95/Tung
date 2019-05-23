@@ -14,7 +14,7 @@
         }
         .highlight{background-color: yellow;}
         .green{background-color: turquoise;}
-        .boxtype1, .boxtype2 {
+        .boxtype{
             background-color: #f5f5f5;
             border: 1px solid #ccc;
             border-radius: 4px;
@@ -59,7 +59,7 @@
                             console.log(instance);
                         },
                         
-                        <div class="boxtype1"> <span class="highlight">browserVideoDialog:</span> function(options, _callback){
+                        <div class="boxtype"> <span class="highlight">browserVideoDialog:</span> function(options, _callback){
                             var _callFn = function(){
                                 IMSVideoManager.init({
                                     nameSpace: imsConfig.videoApiNameSpace,
@@ -98,7 +98,7 @@
         
                         },
                     </div>
-                    <div class="boxtype2">   <span class="highlight">browserImageDialog :</span> function (options, _callback) {
+                    <div class="boxtype">   <span class="highlight">browserImageDialog :</span> function (options, _callback) {
 
                             var _callFn = function(){
                                 IMSPhotoManager.init({
@@ -141,7 +141,7 @@
                                     </p>
                         },
                     </div>
-                        <div class="boxtype1"></p><span class="highlight">editPhotoWatermark:</span> function(options, callback){
+                        <div class="boxtype"></p><span class="highlight">editPhotoWatermark:</span> function(options, callback){
 
                             var _callFn = function(){
                                 IMSPhotoEditor.initWatermark({
@@ -177,7 +177,7 @@
         
                         },
                     </div>
-                    <div class="boxtype2">   <span class="highlight">editPhotoEffect:</span> function(options, callback){
+                    <div class="boxtype">   <span class="highlight">editPhotoEffect:</span> function(options, callback){
 
                             var _callFn = function(){
                                 IMSPhotoEditor.init({
